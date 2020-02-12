@@ -10,11 +10,16 @@
 - install the dependencies `npm install`
 - start developing! `npm run dev`
 
+### Eventual Requirements
+
+- you will need to sign up for a Stripe account if you haven't already: [stripe.com/register](https://stripe.com/register)
+- you will need to add your account's secret key and publishable key to the `next.config.js` file
+
 ### Credit Card Input Design Requirements
 
-- The behavior, look and feel of the app should match the gif exactly.
-- Text color: `#fff`
-- Font size: `16px`
-- Placeholder text color: `#87bbfd`
-- Invalid text color: `#FFC7EE`
-- Success/Complete text color: `#cbf4c9`
+- the behavior, look and feel of the app should match the gif exactly
+- text color: `#fff`
+- font size: `16px`
+- placeholder text color: `#87bbfd`
+- invalid text color: `#FFC7EE`
+- success/complete text color: `#cbf4c9`
