@@ -22,4 +22,3 @@
 - font size: `16px`
 - placeholder text color: `#87bbfd`
 - invalid text color: `#FFC7EE`
-- success/complete text color: `#cbf4c9`
