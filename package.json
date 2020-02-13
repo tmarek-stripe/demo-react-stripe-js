@@ -18,5 +18,8 @@
     "react-dom": "^16.7.0",
     "stripe": "^8.15.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "dotenv": "^8.2.0"
+  }
 }
