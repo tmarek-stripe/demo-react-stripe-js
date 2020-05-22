@@ -81,7 +81,7 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
 
       onSuccessfulCheckout();
     } catch (err) {
-      setCheckoutError(err);
+      setCheckoutError(err.message);
     }
   };
 
