@@ -1,4 +1,8 @@
 {
   "baseUrl": "http://localhost:3000",
+  "component": {
+    "componentFolder": "component",
+    "testFiles": "**/*spec.{js,jsx,ts,tsx}"
+  },
   "chromeWebSecurity": false
 }

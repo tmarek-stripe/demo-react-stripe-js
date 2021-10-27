@@ -50,18 +50,37 @@ Cypress.Commands.add('enterCardDetailsIniframe', ({cardNumber, expDate, cvc}) =>
 Cypress.Commands.add('enterCardUserDetails', ({fullName, email, address, city, state, zip}) => {
     cy.log('Entering card user details.')
 
-    cy.get('[name=name]',{log:false})
-        .type(fullName,{log:false})
-    cy.get('[name=email]',{log:false})
-        .type(email,{log:false})
-    cy.get('[name=address]',{log:false})
-        .type(address,{log:false})
-    cy.get('[name=city]',{log:false})
-        .type(city,{log:false})
-    cy.get('[name=state]',{log:false})
-        .type(state,{log:false})
-    cy.get('[name=zip]',{log:false})
-        .type(zip,{log:false})
+    const formField = {
+        name: {
+            selector: '[data-cy=name]',
+            input: fullName
+        },
+        email: {
+            selector: '[data-cy=email]',
+            input: email
+        },
+        address: {
+            selector: '[data-cy=address]',
+            input: address
+        },
+        city: {
+            selector: '[data-cy=city]',
+            input: city
+        },
+        state: {
+            selector: '[data-cy=state]',
+            input:state
+        },
+        zip: {
+            selector: '[data-cy=zip]',
+            input: zip
+        }
+    }
+    for( const key in formField) {
+        const field = formField[key]
+        cy.get(field.selector,{log:false})
+            .type(field.input,{log:false})
+    }
 
     cy.log('Card user details have been entered!')
 })

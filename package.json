@@ -20,8 +20,11 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@cypress/react": "^5.10.1",
+    "@cypress/webpack-dev-server": "^1.7.0",
     "cypress": "^8.7.0",
     "cypress-iframe": "^1.0.1",
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "webpack-dev-server": "^4.3.1"
   }
 }
