@@ -22,3 +22,14 @@
 - font size: `16px`
 - placeholder text color: `#87bbfd`
 - invalid text color: `#FFC7EE`
+
+### Cypress Testing
+NOTE: There is a known issue with cy-grep implementation not picking correct tag tests, so cy:run:api, cy:run:smoke, and 
+cy:run:regression do not work correctly as of this moment.
+- Open cypress: `npm run cy:open`
+- Run all cypress test: `npm run cy:run`
+- Run only api cypress tests: `npm run cy:run:api`
+- Run only smoke cypress tests: `npm run cy:run:smoke`
+- Run only regression cypress tests: `npm run cy:run:regression`
+
+Web App Author: Thomas Marek
