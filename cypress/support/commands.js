@@ -29,19 +29,21 @@ import 'cypress-iframe'
     number into stripe iframe
  */
 Cypress.Commands.add('enterCardDetailsIniframe', ({cardNumber, expDate, cvc}) => {
+    cy.log('Entering card details')
     const iframeSelector = '[title="Secure card payment input frame"]'
-    cy.frameLoaded(iframeSelector)
-    cy.enter(iframeSelector).then(getBody => {
+    cy.frameLoaded(iframeSelector,{log:false})
+    cy.enter(iframeSelector,{log:false}).then(getBody => {
         getBody()
-            .find('[name=cardnumber]')
-            .type(cardNumber)
+            .find('[name=cardnumber]',{log:false})
+            .type(cardNumber,{log:false})
         getBody()
-            .find('[name=exp-date]')
-            .type(expDate)
+            .find('[name=exp-date]',{log:false})
+            .type(expDate,{log:false})
         getBody()
-            .find('[name=cvc]')
-            .type(cvc)
+            .find('[name=cvc]',{log:false})
+            .type(cvc,{log:false})
     })
+    cy.log('Card details have been entered!')
 })
 
 /*

@@ -20,8 +20,11 @@ module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
 
+    //config for nextjs component testing
     if (config.testingType === 'component') {
         require('@cypress/react/plugins/next')(on, config)
     }
+    require('cypress-grep/src/plugin')(config)
+
     return config
 }
