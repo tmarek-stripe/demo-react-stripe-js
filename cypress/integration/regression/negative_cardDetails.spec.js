@@ -3,7 +3,8 @@ const invalidCardDtails = {
     expDate: '0422',
     cvc: '222'
 }
-it('incorrect card details should prompt error message',{tags: '@regression'}, function () {
+
+it('incorrect card details should prompt error message',{tags: 'regression'}, function () {
     cy.visit('/')
 
     cy.enterCardDetailsIniframe(invalidCardDtails)

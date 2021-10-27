@@ -1,5 +1,4 @@
-
-const cardUserDetails = {
+const validCardUserDetails = {
     fullName: 'Cypress User',
     email: 'cypresstesting@gmail.com',
     address: '123 mail lane',
@@ -13,7 +12,7 @@ const validCardDetails = {
     cvc: '222'
 }
 
-it('payment should be successful',{tags: '@smoke'}, function () {
+it('payment should be successful',{tags: 'smoke'}, function () {
     //spy requests for successful payment
     cy.intercept('POST','https://api.stripe.com/v1/payment_methods').as('payment')
     cy.intercept('POST','api/payment_intents').as('paymentIntents')
@@ -22,7 +21,7 @@ it('payment should be successful',{tags: '@smoke'}, function () {
 
     cy.visit('/')
 
-    cy.enterCardUserDetails(cardUserDetails)
+    cy.enterCardUserDetails(validCardUserDetails)
     cy.enterCardDetailsIniframe(validCardDetails)
 
     cy.contains('button', 'Pay',{log:false})

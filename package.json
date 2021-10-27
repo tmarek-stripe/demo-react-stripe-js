@@ -4,7 +4,12 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "cy:open": "npx cypress open",
+    "cy:run": "npx cypress run",
+    "cy:run:api": "npx cypress run --env grep=api",
+    "cy:run:smoke": "npx cypress run --env grep=smoke",
+    "cy:run:regression": "npx cypress run --env grep=regression"
   },
   "dependencies": {
     "@emotion/core": "^10.0.28",

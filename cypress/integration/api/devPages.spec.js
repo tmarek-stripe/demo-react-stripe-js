@@ -1,5 +1,5 @@
 import spok from 'cy-spok'
-it('_devPages api should return 200', {tags: '@api'},function () {
+it('_devPages api should return 200', {tags: 'api'},function () {
     cy.api({
         method: 'GET',
         url:'_next/static/development/_devPagesManifest.json'

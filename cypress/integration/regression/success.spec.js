@@ -1,4 +1,4 @@
-it('Success page should display', function () {
+it('Success page should display', {tags: 'regression'},function () {
     cy.visit('/success')
 
     cy.contains('div', 'congrats!')

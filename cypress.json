@@ -4,5 +4,6 @@
     "componentFolder": "component",
     "testFiles": "**/*spec.{js,jsx,ts,tsx}"
   },
-  "chromeWebSecurity": false
+  "chromeWebSecurity": false,
+  "video": false
 }
