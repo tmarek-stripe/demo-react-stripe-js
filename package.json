@@ -20,6 +20,8 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "cypress": "^8.7.0",
+    "cypress-iframe": "^1.0.1",
     "dotenv": "^8.2.0"
   }
 }
