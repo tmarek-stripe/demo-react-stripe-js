@@ -6,3 +6,6 @@ it('Success page should display', {tags: 'regression'},function () {
     cy.contains('div', 'Stripe has successfully processed your payment')
         .should('be.visible')
 });
+
+
+//TODO: confirm gif loads with naturalWidth/natrualHeight

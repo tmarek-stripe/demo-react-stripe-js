@@ -24,9 +24,8 @@
 - invalid text color: `#FFC7EE`
 
 ### Cypress Testing
-NOTE: Web app will need to be started before running cypress tests.There is a known issue with cy-grep implementation 
-not picking correct tag tests, so cy:run:api, cy:run:smoke, and cy:run:regression do not work correctly as of this 
-moment.
+NOTE: Web app will need to be started before running cypress tests. There is an issue opening cypress for 
+component testing.
 - Open cypress: `npm run cy:open`
 - Run all cypress test: `npm run cy:run`
 - Run only api cypress tests: `npm run cy:run:api`

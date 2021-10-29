@@ -7,9 +7,9 @@
     "start": "next start",
     "cy:open": "npx cypress open",
     "cy:run": "npx cypress run",
-    "cy:run:api": "npx cypress run --env grep=api",
-    "cy:run:smoke": "npx cypress run --env grep=smoke",
-    "cy:run:regression": "npx cypress run --env grep=regression"
+    "cy:run:api": "npx cypress run --env grepTags=api",
+    "cy:run:smoke": "npx cypress run --env grepTags=smoke",
+    "cy:run:regression": "npx cypress run --env grepTags=regression"
   },
   "dependencies": {
     "@emotion/core": "^10.0.28",
