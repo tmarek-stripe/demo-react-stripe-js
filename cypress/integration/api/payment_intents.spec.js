@@ -2,6 +2,8 @@ it('payment_intents api should return 200',{tags: 'api'},function () {
     cy.api({
         method:'POST',
         url: '/api/payment_intents',
+        statusCode: 200,
+        statusText: 'OK',
         body: {
             amount: 250
         }
