@@ -8,4 +8,4 @@ it('Success page should display', {tags: 'regression'},function () {
 });
 
 
-//TODO: confirm gif loads with naturalWidth/natrualHeight
+//TODO: confirm confetti loads with https://github.com/alampros/react-confetti

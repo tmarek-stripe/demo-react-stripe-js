@@ -2,7 +2,9 @@ import spok from 'cy-spok'
 it('_devPages api should return 200', {tags: 'api'},function () {
     cy.api({
         method: 'GET',
-        url:'_next/static/development/_devPagesManifest.json'
+        url:'_next/static/development/_devPagesManifest.json',
+        statusCode: 200,
+        statusText: 'OK'
     }, 'Dev Pages')
         .then(response => {
             expect(response.status).to.eq(200)
