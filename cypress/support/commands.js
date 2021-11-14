@@ -23,26 +23,15 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-import 'cypress-iframe'
 /*
-    Customer command "enterCardDetailsIniframe" to enter card card number, card expiration date, and card cvc
+    Customer command "enterCardDetails" to enter card card number, card expiration date, and card cvc
     number into stripe iframe
  */
-Cypress.Commands.add('enterCardDetailsIniframe', ({cardNumber, expDate, cvc}) => {
+Cypress.Commands.add('enterCardDetails', ({cardNumber, expDate, cvc}) => {
     cy.log('Entering card details')
-    const iframeSelector = '[title="Secure card payment input frame"]'
-    cy.frameLoaded(iframeSelector,{log:false})
-    cy.enter(iframeSelector,{log:false}).then(getBody => {
-        getBody()
-            .find('[name=cardnumber]',{log:false})
-            .type(cardNumber,{log:false})
-        getBody()
-            .find('[name=exp-date]',{log:false})
-            .type(expDate,{log:false})
-        getBody()
-            .find('[name=cvc]',{log:false})
-            .type(cvc,{log:false})
-    })
+    cy.fillElementsInput('cardNumber', cardNumber);
+    cy.fillElementsInput('cardExpiry', expDate); // MMYY
+    cy.fillElementsInput('cardCvc', cvc);
     cy.log('Card details have been entered!')
 })
 

@@ -31,7 +31,7 @@
     "cy-spok": "^1.3.4",
     "cypress": "^8.7.0",
     "cypress-grep": "^2.6.1",
-    "cypress-iframe": "^1.0.1",
+    "cypress-plugin-stripe-elements": "^1.0.2",
     "dotenv": "^8.2.0",
     "webpack-dev-server": "^4.3.1"
   }

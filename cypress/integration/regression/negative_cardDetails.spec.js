@@ -7,7 +7,7 @@ const invalidCardDtails = {
 it('incorrect card details should prompt error message',{tags: 'regression'}, function () {
     cy.visit('/')
 
-    cy.enterCardDetailsIniframe(invalidCardDtails)
+    cy.enterCardDetails(invalidCardDtails)
     cy.contains('[role=alert]', 'Your card number is invalid.')
         .should('be.visible')
 });

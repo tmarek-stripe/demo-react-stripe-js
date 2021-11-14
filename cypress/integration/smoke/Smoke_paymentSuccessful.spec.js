@@ -22,7 +22,7 @@ it('payment should be successful',{tags: 'smoke'}, function () {
     cy.visit('/')
 
     cy.enterCardUserDetails(validCardUserDetails)
-    cy.enterCardDetailsIniframe(validCardDetails)
+    cy.enterCardDetails(validCardDetails)
 
     cy.contains('button', 'Pay',{log:false})
         .click({log:false})
