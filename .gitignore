@@ -2,5 +2,6 @@
 .next
 node_modules
 .idea
-package-lock.json
-cypress/videos
+node_modules
+cypress/videos/
+cypress/screenshots/
