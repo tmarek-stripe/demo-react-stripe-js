@@ -16,11 +16,15 @@ const invalidCVC = [
     12
 ]
 
+
+// although stripe is 3rd party, we are testing to showcase cypress features
+// and adding negative test cases
 describe('Invalid card details', { tags: ['regression', 'negative'] }, () => {
     beforeEach(() => {
         cy.visit('/')
     })
 
+    // we use lodash '_.times()' to iterate over array of invalid inputs
     Cypress._.times(invalidCardDtails.length, (k) => {
         const cardNumber = invalidCardDtails[k]
         it(`${invalidCardDtails[k]} is invalid card number`, () => {
