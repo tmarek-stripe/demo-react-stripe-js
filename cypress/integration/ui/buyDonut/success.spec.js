@@ -6,13 +6,13 @@ describe('Success', () => {
     })
 
     it('Success page should display', { tags: 'regression' }, function () {
-        cy.byTestid('Congrats')
+        cy.byTestId('Congrats')
             .should('be.visible')
             .and('contain.text', 'congrats')
-        cy.byTestid('Message')
+        cy.byTestId('Message')
             .should('be.visible')
             .and('contain.text', 'Stripe has successfully processed your payment')
-        cy.byTestid('Confetti')
+        cy.byTestId('Confetti')
             .should('be.visible')
     });
 })

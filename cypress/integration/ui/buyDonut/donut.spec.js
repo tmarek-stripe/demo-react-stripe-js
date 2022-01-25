@@ -6,7 +6,7 @@ describe('Donut', { tags: 'regression' }, function () {
     })
 
     it('+ should increment amount', function () {
-        cy.byTestid('DonutQuantity')
+        cy.byTestId('DonutQuantity')
             .then(donutCount => {
 
                 // sets initial value of donut count
@@ -14,11 +14,11 @@ describe('Donut', { tags: 'regression' }, function () {
                 cy.log('Initial donut count is ' + initialValue)
 
                 // increment amount
-                cy.byTestid('Increment')
+                cy.byTestId('Increment')
                     .click({ log: false })
 
                 // validate new count is greater
-                cy.byTestid('DonutQuantity')
+                cy.byTestId('DonutQuantity')
                     .then(newDonutCount => {
                         expect(parseInt(newDonutCount.val())).to.be.gt(parseInt(initialValue))
                     })
@@ -26,7 +26,7 @@ describe('Donut', { tags: 'regression' }, function () {
     });
 
     it('- should not decrement below 1', function () {
-        cy.byTestid('DonutQuantity')
+        cy.byTestId('DonutQuantity')
             .then(donutCount => {
 
                 // sets initial value of donut count
@@ -34,11 +34,11 @@ describe('Donut', { tags: 'regression' }, function () {
                 cy.log('Initial donut count is ' + initialValue)
 
                 // decrement amount
-                cy.byTestid('Decrement')
+                cy.byTestId('Decrement')
                     .click({ log: false })
 
                 // validate new count is greater
-                cy.byTestid('DonutQuantity')
+                cy.byTestId('DonutQuantity')
                     .then(newDonutCount => {
                         expect(parseInt(newDonutCount.val())).to.be.eq(parseInt(initialValue))
                     })
@@ -46,18 +46,18 @@ describe('Donut', { tags: 'regression' }, function () {
     });
 
     it('+ should increment price', function () {
-        cy.byTestid('Pay')
+        cy.byTestId('Pay')
             .then(price => {
 
                 const initialPriceText = price.text()
                 const initialPrice = initialPriceText.substring(initialPriceText.indexOf('$') + 1)
 
                 // increment amount
-                cy.byTestid('Increment')
+                cy.byTestId('Increment')
                     .click({ log: false })
 
                 // validate new price is greater
-                cy.byTestid('Pay')
+                cy.byTestId('Pay')
                     .then(price => {
                         const newPriceText = price.text()
                         const newPrice = newPriceText.substring(newPriceText.indexOf('$') + 1)
@@ -95,7 +95,7 @@ describe('Donut Payment', function () {
         cy.enterCardUserDetails(validCardUserDetails)
         cy.enterCardDetails(validCardDetails)
 
-        cy.byTestid('Pay')
+        cy.byTestId('Pay')
             .click({ log: false })
         cy.log('Processing Payment')
         cy.wait([

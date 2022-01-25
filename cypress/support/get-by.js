@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-Cypress.Commands.add('byTestid', { prevSubject: 'optional' }, (subject, testId, containsText, options) => {
+Cypress.Commands.add('byTestId', { prevSubject: 'optional' }, (subject, testId, containsText, options) => {
     const query = `[data-testid=${testId}]`
     const noLog = { log: false } // suppress wrap command log
 
