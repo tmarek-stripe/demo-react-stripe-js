@@ -23,13 +23,14 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
 /*
     Customer command "enterCardDetails" to enter card card number, card expiration date, and card cvc
     number into stripe iframe
  */
 Cypress.Commands.add('enterCardDetails', (cardDetails = null) => {
     const defaultCardDetails = {
-        cardNumber: 411111111111,
+        cardNumber: 4111111111111111,
         expDate: '1230',
         cvc: 319,
         ...cardDetails,
@@ -37,7 +38,7 @@ Cypress.Commands.add('enterCardDetails', (cardDetails = null) => {
     cy.log('Entering card details')
     cy.fillElementsInput('cardNumber', String(defaultCardDetails.cardNumber));
     cy.fillElementsInput('cardExpiry', defaultCardDetails.expDate); // MMYY
-    cy.fillElementsInput('cardCvc', String(defaultCardDetails.cvc));
+    cy.fillElementsInput('cardCvc', String(defaultCardDetails.cvc)).tab(); // to shift focus away from input
     cy.log('Card details have been entered!')
 })
 

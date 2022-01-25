@@ -15,6 +15,7 @@
 
 // Import commands.js using ES2015 syntax:
 require('cypress-grep')()
+require('cypress-plugin-tab')
 import './commands'
 import '@bahmutov/cy-api/support'
 import 'cypress-plugin-stripe-elements';

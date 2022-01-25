@@ -33,6 +33,7 @@
     "cypress": "^8.7.0",
     "cypress-grep": "^2.6.1",
     "cypress-plugin-stripe-elements": "^1.0.2",
+    "cypress-plugin-tab": "^1.0.5",
     "dotenv": "^8.2.0",
     "html-webpack-plugin": "^5.5.0",
     "prettier": "^2.5.1",
