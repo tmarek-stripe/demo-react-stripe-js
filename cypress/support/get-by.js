@@ -1,4 +1,4 @@
-
+/// <reference types="cypress" />
 
 Cypress.Commands.add('byTestid', { prevSubject: 'optional' }, (subject, testId, containsText, options) => {
     const query = `[data-testid=${testId}]`
