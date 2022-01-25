@@ -59,27 +59,27 @@ Cypress.Commands.add('enterCardUserDetails', (userDetails = null) => {
 
     const formField = {
         name: {
-            selector: '[data-cy=name]',
+            selector: '[data-testid=name]',
             input: defaultUserDetails.fullName
         },
         email: {
-            selector: '[data-cy=email]',
+            selector: '[data-testid=email]',
             input: defaultUserDetails.email
         },
         address: {
-            selector: '[data-cy=address]',
+            selector: '[data-testid=address]',
             input: defaultUserDetails.address
         },
         city: {
-            selector: '[data-cy=city]',
+            selector: '[data-testid=city]',
             input: defaultUserDetails.city
         },
         state: {
-            selector: '[data-cy=state]',
+            selector: '[data-testid=state]',
             input: defaultUserDetails.state
         },
         zip: {
-            selector: '[data-cy=zip]',
+            selector: '[data-testid=zip]',
             input: String(defaultUserDetails.zip)
         }
     }
