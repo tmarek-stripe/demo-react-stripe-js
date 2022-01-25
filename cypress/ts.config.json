@@ -1,0 +1,22 @@
+{
+    "include": [
+        "cypress/**/*"
+    ],
+    "compilerOptions": {
+        "allowJs": true,
+        "checkJs": true,
+        "noEmit": true,
+        "resolveJsonModule": true,
+        "types": [
+            "cypress",
+            "cypress-plugin-stripe-elements",
+            "cypress-plugin-tab"
+        ],
+        "lib": [
+            "es2015",
+            "dom"
+        ],
+        "moduleResolution": "node",
+        "module": "es2015"
+    }
+}
