@@ -1,3 +1,5 @@
+import { createHorde, species, strategies } from 'gremlins.js';
+
 describe('Donut', { tags: 'regression' }, function () {
     beforeEach(() => {
         cy.visit('/')
@@ -66,27 +68,29 @@ describe('Donut', { tags: 'regression' }, function () {
 });
 
 describe('Donut Payment', function () {
-    const validCardUserDetails = {
-        fullName: 'Cypress User',
-        email: 'cypresstesting@gmail.com',
-        address: '123 mail lane',
-        city: 'Austin',
-        state: 'Texas',
-        zip: 78701
-    }
-    const validCardDetails = {
-        cardNumber: 4242424242424242,
-        expDate: '1222',
-        cvc: 222
-    }
-
-    it('payment should be successful', { tags: 'smoke' }, function () {
+    beforeEach(() => {
         //spy requests for successful payment
         cy.intercept('POST', 'https://api.stripe.com/v1/payment_methods').as('payment')
         cy.intercept('POST', 'api/payment_intents').as('paymentIntents')
         cy.intercept('POST', 'https://api.stripe.com/v1/payment_intents/*/confirm').as('paymentConfirm')
 
         cy.visit('/')
+    })
+
+    it('payment should be successful', { tags: 'smoke' }, function () {
+        const validCardUserDetails = {
+            fullName: 'Cypress User',
+            email: 'cypresstesting@gmail.com',
+            address: '123 mail lane',
+            city: 'Austin',
+            state: 'Texas',
+            zip: 78701
+        }
+        const validCardDetails = {
+            cardNumber: 4242424242424242,
+            expDate: '1222',
+            cvc: 222
+        }
 
         cy.enterCardUserDetails(validCardUserDetails)
         cy.enterCardDetails(validCardDetails)
@@ -103,4 +107,30 @@ describe('Donut Payment', function () {
 
         cy.url().should('eq', Cypress.config('baseUrl') + '/success')
     });
+})
+
+describe('Gremlins run', () => {
+    let horde
+    beforeEach(() => {
+        return cy.visit('/').then(() => {
+            cy.window().then(pageWindow => {
+                horde = createHorde({
+                    species: [
+                        species.clicker(),
+                        species.formFiller(),
+                        species.typer(),
+                        species.scroller()
+                    ],
+                    strategies: [strategies.allTogether({ delay: 8, nb: 500 })],
+                    window: pageWindow,
+                })
+            })
+        })
+    })
+
+    it('Run gremlins test', () => {
+        return cy.wrap(horde.unleash(), { timeout: 8000 }).then(() => {
+            // TODO add expected conditions here
+        })
+    })
 })

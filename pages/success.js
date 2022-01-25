@@ -34,9 +34,9 @@ export default () => {
   return (
     <Layout title="Success!">
       <Container>
-        <Confetti width={width} height={height} numberOfPieces={450} />
-        <Title>congrats!</Title>
-        <Message>Stripe has successfully processed your payment</Message>
+        <Confetti width={width} height={height} numberOfPieces={450} data-testid='Confetti' />
+        <Title data-testid='Congrats'>congrats!</Title>
+        <Message data-testid='Message'>Stripe has successfully processed your payment</Message>
       </Container>
     </Layout>
   );

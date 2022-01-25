@@ -17,6 +17,7 @@
 require('cypress-grep')()
 require('cypress-plugin-tab')
 import './commands'
+import './get-by'
 import '@bahmutov/cy-api/support'
 import 'cypress-plugin-stripe-elements';
 
