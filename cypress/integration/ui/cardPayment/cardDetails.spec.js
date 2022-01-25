@@ -1,10 +1,20 @@
 const invalidCardDtails = {
     cardNumber: '1234 4242 4242 4242',
-    expDate: '0422',
-    cvc: '222'
 }
 
-it('incorrect card details should prompt error message',{tags: 'regression'}, function () {
+const invalidExpDates = [
+    '1',
+    '99',
+    '999'
+]
+
+const invalidCVC = [
+    1,
+    12
+]
+
+
+it('incorrect card details should prompt error message', { tags: ['regression', 'negative'] }, function () {
     cy.visit('/')
 
     cy.enterCardDetails(invalidCardDtails)

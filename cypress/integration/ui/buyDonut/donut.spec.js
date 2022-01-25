@@ -72,12 +72,12 @@ describe('Donut Payment', function () {
         address: '123 mail lane',
         city: 'Austin',
         state: 'Texas',
-        zip: '78701'
+        zip: 78701
     }
     const validCardDetails = {
-        cardNumber: '4242 4242 4242 4242',
-        expDate: '0422',
-        cvc: '222'
+        cardNumber: 4242424242424242,
+        expDate: '1222',
+        cvc: 222
     }
 
     it('payment should be successful', { tags: 'smoke' }, function () {
@@ -85,7 +85,6 @@ describe('Donut Payment', function () {
         cy.intercept('POST', 'https://api.stripe.com/v1/payment_methods').as('payment')
         cy.intercept('POST', 'api/payment_intents').as('paymentIntents')
         cy.intercept('POST', 'https://api.stripe.com/v1/payment_intents/*/confirm').as('paymentConfirm')
-        cy.intercept('GET', '_next/static/development/_devPagesManifest.json').as('devPages')
 
         cy.visit('/')
 
@@ -99,7 +98,6 @@ describe('Donut Payment', function () {
             '@payment',
             '@paymentIntents',
             '@paymentConfirm',
-            '@devPages'
         ])
 
 

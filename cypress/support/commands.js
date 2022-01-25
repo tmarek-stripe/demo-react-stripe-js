@@ -27,50 +27,65 @@
     Customer command "enterCardDetails" to enter card card number, card expiration date, and card cvc
     number into stripe iframe
  */
-Cypress.Commands.add('enterCardDetails', ({cardNumber, expDate, cvc}) => {
+Cypress.Commands.add('enterCardDetails', (cardDetails = null) => {
+    const defaultCardDetails = {
+        cardNumber: 411111111111,
+        expDate: '1230',
+        cvc: 319,
+        ...cardDetails,
+    }
     cy.log('Entering card details')
-    cy.fillElementsInput('cardNumber', cardNumber);
-    cy.fillElementsInput('cardExpiry', expDate); // MMYY
-    cy.fillElementsInput('cardCvc', cvc);
+    cy.fillElementsInput('cardNumber', String(defaultCardDetails.cardNumber));
+    cy.fillElementsInput('cardExpiry', defaultCardDetails.expDate); // MMYY
+    cy.fillElementsInput('cardCvc', String(defaultCardDetails.cvc));
     cy.log('Card details have been entered!')
 })
 
 /*
     Custom command "enterCardUserDetails" to enter card user full name, email, address, city, state, and zip details
  */
-Cypress.Commands.add('enterCardUserDetails', ({fullName, email, address, city, state, zip}) => {
+Cypress.Commands.add('enterCardUserDetails', (userDetails = null) => {
+    const defaultUserDetails = {
+        fullName: 'John Wick',
+        email: 'johnwick@wick.com',
+        address: '777 Wicker Lane',
+        city: 'Wickerson',
+        state: 'WA',
+        zip: 77777,
+        ...userDetails
+    }
     cy.log('Entering card user details.')
 
     const formField = {
         name: {
             selector: '[data-cy=name]',
-            input: fullName
+            input: defaultUserDetails.fullName
         },
         email: {
             selector: '[data-cy=email]',
-            input: email
+            input: defaultUserDetails.email
         },
         address: {
             selector: '[data-cy=address]',
-            input: address
+            input: defaultUserDetails.address
         },
         city: {
             selector: '[data-cy=city]',
-            input: city
+            input: defaultUserDetails.city
         },
         state: {
             selector: '[data-cy=state]',
-            input:state
+            input: defaultUserDetails.state
         },
         zip: {
             selector: '[data-cy=zip]',
-            input: zip
+            input: String(defaultUserDetails.zip)
         }
     }
-    for( const key in formField) {
+    for (const key in formField) {
         const field = formField[key]
-        cy.get(field.selector,{log:false})
-            .type(field.input,{log:false})
+        cy.get(field.selector, { log: false })
+            .type(field.input, { log: false })
     }
 
     cy.log('Card user details have been entered!')
