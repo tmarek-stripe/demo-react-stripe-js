@@ -8,7 +8,7 @@ const BillingDetailsFields = () => {
         label="Name"
         type="text"
         placeholder="Jane Doe"
-        datacy="name"
+        dataTestId="name"
         required
       />
       <FormField
@@ -16,7 +16,7 @@ const BillingDetailsFields = () => {
         label="Email"
         type="email"
         placeholder="jane.doe@example.com"
-        datacy="email"
+        dataTestId="email"
         required
       />
       <FormField
@@ -24,7 +24,7 @@ const BillingDetailsFields = () => {
         label="Address"
         type="text"
         placeholder="185 Berry St. Suite 550"
-        datacy="address"
+        dataTestId="address"
         required
       />
       <FormField
@@ -32,7 +32,7 @@ const BillingDetailsFields = () => {
         label="City"
         type="text"
         placeholder="San Francisco"
-        datacy="city"
+        dataTestId="city"
         required
       />
       <FormField
@@ -40,7 +40,7 @@ const BillingDetailsFields = () => {
         label="State"
         type="text"
         placeholder="California"
-        datacy="state"
+        dataTestId="state"
         required
       />
       <FormField
@@ -48,7 +48,7 @@ const BillingDetailsFields = () => {
         label="ZIP"
         type="text"
         placeholder="94103"
-        datacy="zip"
+        dataTestId="zip"
         required
       />
     </>

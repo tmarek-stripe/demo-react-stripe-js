@@ -109,7 +109,7 @@ describe('Donut Payment', function () {
     });
 })
 
-describe.skip('Gremlins run', () => {
+describe('Gremlins run', () => {
     let horde
     beforeEach(() => {
         return cy.visit('/').then(() => {
