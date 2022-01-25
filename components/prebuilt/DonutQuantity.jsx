@@ -43,9 +43,9 @@ const IncrementButton = styled(Button)`
 const DonutQuantity = ({ onAdd, onRemove, quantity }) => {
   return (
     <>
-      <DecrementButton onClick={onRemove}>–</DecrementButton>
-      <Input type="text" value={quantity} readOnly />
-      <IncrementButton onClick={onAdd}>+</IncrementButton>
+      <DecrementButton onClick={onRemove} data-testid="Decrement">–</DecrementButton>
+      <Input type="text" value={quantity} readOnly data-testid="DonutQuantity" />
+      <IncrementButton onClick={onAdd} data-testid="Increment">+</IncrementButton>
     </>
   );
 };

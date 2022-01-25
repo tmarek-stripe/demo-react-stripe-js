@@ -38,11 +38,11 @@ const Input = styled.input`
   }
 `;
 
-const FormField = ({ label, type, name, placeholder, datacy, required}) => {
+const FormField = ({ label, type, name, placeholder, dataTestId, required }) => {
   return (
     <FormFieldContainer>
       <Label htmlFor={name}>{label}</Label>
-      <Input name={name} type={type} placeholder={placeholder} data-cy={datacy} required  />
+      <Input name={name} type={type} placeholder={placeholder} data-testid={dataTestId} required />
     </FormFieldContainer>
   );
 };
