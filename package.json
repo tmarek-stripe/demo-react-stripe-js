@@ -5,11 +5,11 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "cy:open": "npx cypress open",
-    "cy:run": "npx cypress run",
-    "cy:run:api": "npx cypress run --env grepTags=api,grepOmitFiltered=true",
-    "cy:run:smoke": "npx cypress run --env grepTags=smoke,grepOmitFiltered=true",
-    "cy:run:regression": "npx cypress run --env grepTags=regression,grepOmitFiltered=true"
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:run:api": "cypress run --env grepTags=api,grepOmitFiltered=true",
+    "cy:run:smoke": "cypress run --env grepTags=smoke,grepOmitFiltered=true",
+    "cy:run:regression": "cypress run --env grepTags=regression,grepOmitFiltered=true"
   },
   "dependencies": {
     "@emotion/core": "^10.0.28",
