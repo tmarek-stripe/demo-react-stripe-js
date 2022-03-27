@@ -1,0 +1,22 @@
+{
+    "extends": [
+        "config:base"
+    ],
+    "automerge": true,
+    "prHourlyLimit": 2,
+    "updateNotScheduled": false,
+    "timezone": "America/Chicago",
+    "schedule": [
+        "every weekend"
+    ],
+    "masterIssue": true,
+    "packageRules": [
+        {
+            "matchPackageNames": [
+                "gremlins.js",
+                "start-server-and-test"
+            ],
+            "enabled": false
+        }
+    ]
+}
