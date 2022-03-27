@@ -1,3 +1,15 @@
+version: 2.1
+orbs:
+  cypress: cypress-io/cypress@1
+executors:
+  with-browsers:
+    # https://circleci.com/docs/2.0/configuration-reference/#resourceclass
+    # medium is the default resource class
+    resource_class: small
+    docker:
+      # https://github.com/cypress-io/cypress-docker-images
+      - image: cypress/browsers:node14.16.0-chrome90-ff88
+
 name: ci
 on: [push]
 jobs:
@@ -12,6 +24,6 @@ jobs:
 
       - name: Build app
         run: npm run build
-        
+
       - name: Test 🧪
         run: npm run ci
