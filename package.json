@@ -5,8 +5,10 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "ci": "start-server-and-test :3000 cy:run",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
+    "cy:dev": "start-test 3000 cy:open",
     "cy:run:api": "cypress run --env grepTags=api,grepOmitFiltered=true",
     "cy:run:smoke": "cypress run --env grepTags=smoke,grepOmitFiltered=true",
     "cy:run:regression": "cypress run --env grepTags=regression,grepOmitFiltered=true"
