@@ -19,6 +19,7 @@
 module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
+<<<<<<< Updated upstream
 
     //config for nextjs component testing
     if (config.testingType === 'component') {
@@ -27,4 +28,6 @@ module.exports = (on, config) => {
     require('cypress-grep/src/plugin')(config)
 
     return config
+=======
+>>>>>>> Stashed changes
 }

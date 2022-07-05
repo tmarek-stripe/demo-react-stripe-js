@@ -1,5 +1,6 @@
 {
   "baseUrl": "http://localhost:3000",
+<<<<<<< Updated upstream
   "component": {
     "componentFolder": "component",
     "testFiles": "**/*spec.{js,jsx,ts,tsx}"
@@ -7,3 +8,7 @@
   "chromeWebSecurity": false,
   "video": false
 }
+=======
+  "chromeWebSecurity": false
+}
+>>>>>>> Stashed changes

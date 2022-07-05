@@ -28,6 +28,7 @@
   },
   "license": "MIT",
   "devDependencies": {
+<<<<<<< Updated upstream
     "@bahmutov/cy-api": "^1.6.0",
     "@cypress/react": "^5.10.3",
     "@cypress/webpack-dev-server": "^1.7.0",
@@ -44,5 +45,10 @@
     "typescript": "^4.5.5",
     "webpack": "^5.64.0",
     "webpack-dev-server": "^3.11.3"
+=======
+    "cypress": "^8.7.0",
+    "cypress-iframe": "^1.0.1",
+    "dotenv": "^8.2.0"
+>>>>>>> Stashed changes
   }
 }

@@ -23,6 +23,7 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+<<<<<<< Updated upstream
 
 /*
     Customer command "enterCardDetails" to enter card card number, card expiration date, and card cvc
@@ -40,11 +41,33 @@ Cypress.Commands.add('enterCardDetails', (cardDetails = null) => {
     cy.fillElementsInput('cardExpiry', defaultCardDetails.expDate); // MMYY
     cy.fillElementsInput('cardCvc', String(defaultCardDetails.cvc)).tab(); // to shift focus away from input
     cy.log('Card details have been entered!')
+=======
+import 'cypress-iframe'
+/*
+    Customer command "enterCardDetailsIniframe" to enter card card number, card expiration date, and card cvc
+    number into stripe iframe
+ */
+Cypress.Commands.add('enterCardDetailsIniframe', ({cardNumber, expDate, cvc}) => {
+    const iframeSelector = '[title="Secure card payment input frame"]'
+    cy.frameLoaded(iframeSelector)
+    cy.enter(iframeSelector).then(getBody => {
+        getBody()
+            .find('[name=cardnumber]')
+            .type(cardNumber)
+        getBody()
+            .find('[name=exp-date]')
+            .type(expDate)
+        getBody()
+            .find('[name=cvc]')
+            .type(cvc)
+    })
+>>>>>>> Stashed changes
 })
 
 /*
     Custom command "enterCardUserDetails" to enter card user full name, email, address, city, state, and zip details
  */
+<<<<<<< Updated upstream
 Cypress.Commands.add('enterCardUserDetails', (userDetails = null) => {
     const defaultUserDetails = {
         fullName: 'John Wick',
@@ -88,6 +111,23 @@ Cypress.Commands.add('enterCardUserDetails', (userDetails = null) => {
         cy.get(field.selector, { log: false })
             .type(field.input, { log: false })
     }
+=======
+Cypress.Commands.add('enterCardUserDetails', ({fullName, email, address, city, state, zip}) => {
+    cy.log('Entering card user details.')
+
+    cy.get('[name=name]',{log:false})
+        .type(fullName,{log:false})
+    cy.get('[name=email]',{log:false})
+        .type(email,{log:false})
+    cy.get('[name=address]',{log:false})
+        .type(address,{log:false})
+    cy.get('[name=city]',{log:false})
+        .type(city,{log:false})
+    cy.get('[name=state]',{log:false})
+        .type(state,{log:false})
+    cy.get('[name=zip]',{log:false})
+        .type(zip,{log:false})
+>>>>>>> Stashed changes
 
     cy.log('Card user details have been entered!')
 })

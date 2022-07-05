@@ -14,6 +14,7 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
+<<<<<<< Updated upstream
 require('cypress-grep')()
 require('cypress-plugin-tab')
 import './commands'
@@ -23,3 +24,9 @@ import 'cypress-plugin-stripe-elements';
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+=======
+import './commands'
+
+// Alternatively you can use CommonJS syntax:
+// require('./commands')
+>>>>>>> Stashed changes
