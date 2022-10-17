@@ -1,1 +1,2 @@
 i am new to all this
+import Image from "./Image";
